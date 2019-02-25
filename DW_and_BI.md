@@ -242,7 +242,7 @@ OLTP与OLAP之间的比较：</br>
 #### ETL工具技术架构
 &emsp;&emsp; ETL工具目前有两种技术架构——ETL架构和ELT架构:<br>
 **ETL架构** <br>
-![image](https://github.com/xiongjizhang/picture/blob/master/ETL.jpg?raw=true)
+![image](https://github.com/xiongjizhang/picture/blob/master/ETL.jpg?raw=true) <br>
 在ETL架构中，数据的流向是从源数据流到ETL工具，ETL工具是一个单独的数据处理引擎，一般会在单独的硬件服务器上，实现所有数据转化的工作，然后将数据加载到目标数据仓库中，如果要增加整个ETL过程的效率，则只能增强ETL工具服务器的配置，优化系统处理流程（一般可调的东西非常少）。IBM的datastage和Informatica的powercenter原来都是采用的这种架构。<br>
 ETL架构的优势：<br>
 &emsp;&emsp; ETL可以分担数据库系统的负载（采用单独的硬件服务器）<br>
@@ -251,7 +251,7 @@ ETL架构的优势：<br>
 &emsp;&emsp; ETL与底层的数据库数据存储无关。 <br>
 
 **ELT架构** <br>
-![image](https://github.com/xiongjizhang/picture/blob/master/ELT.jpg?raw=true)
+![image](https://github.com/xiongjizhang/picture/blob/master/ELT.jpg?raw=true) <br>
 在ELT架构中，ELT只负责提供图形化的界面来设计业务规则，数据的整个加工过程都在目标和源的数据库之间流动，ELT协调相关的数据库系统来执行相关的应用，数据加工过程既可以在源数据库端执行，也可以在目标数据仓库端执行（主要取决于系统的架构设计和数据属性）。当ELT过程需要提高效率，则可以通过对相关数据库进行调优，或者改变执行加工的服务器就可以达到。一般数据库厂商会力推该种架构，像Oracle和Teradata都极力宣传ELT架构。<br>
 ELT架构的优势：<br>
 &emsp;&emsp; ELT主要通过数据库引擎来实现系统的可扩展性（尤其是当数据加工过程在晚上时，可以充分利用数据库引擎的资源）<br>
