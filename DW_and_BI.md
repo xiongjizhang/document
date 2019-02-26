@@ -296,7 +296,7 @@ ELT架构的优势：<br>
 &emsp;&emsp; 但是要注意的是，不是每一个带有修改时间特征的数据表都会这么设计，有可能在插入数据的时候只会放入 CreateDate 但是并不会写入 UpdateDate。这样的话，在每次加载的过程中可能就需要同时比较 CreateDate 和 UpdateDate 了。
 
 &emsp;&emsp; *(3) 通过数据库的日志记录实现增量同步* <br>
-&emsp;&emsp; 如mysql数据的binlog，对于mysql数据的所有操作都会在binlog日志中有记录，mysql数据库的主从备份也是通过binlog来实现主从同步的。在使用mysql的binlog来增量同步的应用中，可以使用阿里巴巴的开源项目canal来减少开发工作量，但这种增量同步的方式难度很大，需要专业人员维护，因此不到逼不得已不建议使用该方式实现增量同步。
+&emsp;&emsp; 如mysql数据的binlog，对于mysql数据的所有操作都会在binlog日志中有记录，mysql数据库的主从备份也是通过binlog来实现主从同步的。在使用mysql的binlog来增量同步的应用中，可以使用阿里巴巴的开源项目canal或者python-mysql-replication（python开发）来减少开发工作量，但这种增量同步的方式难度很大，需要专业人员维护，因此不到逼不得已不建议使用该方式实现增量同步。
 
 &emsp;&emsp;类似的有Sql Server的CDC（Change Data Capture），Oracle的CDC等。
 
